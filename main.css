@@ -1,0 +1,258 @@
+button {
+  background: transparent;
+  border: 0;
+}
+
+.logo {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1;
+}
+.logo img {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 170px;
+}
+.logo span {
+  line-height: 1;
+  color: #000;
+}
+.logo .lead {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+.logo .title {
+  font-size: 40px;
+  font-weight: 400;
+  font-family: "League Gothic", sans-serif;
+}
+.logo .title span {
+  color: green;
+}
+
+@media (max-width: 1400px) {
+  .logo .title {
+    font-size: 34px;
+  }
+}
+@media (max-width: 1200px) {
+  .logo .title {
+    font-size: 26px;
+  }
+  .logo .lead {
+    font-size: 12px;
+  }
+}
+@media (max-width: 992px) {
+  .logo .lead, .logo img {
+    display: none;
+  }
+}
+@media (max-width: 552px) {
+  .logo .title {
+    font-size: 18px;
+  }
+}
+#header {
+  padding: 10px 35px;
+  background-color: #fff;
+  border-radius: 16px;
+  position: relative;
+  margin-bottom: 36px;
+}
+
+#main-navigation {
+  display: flex;
+}
+#main-navigation .menu, #main-navigation .menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#main-navigation .menu {
+  display: flex;
+  margin: auto;
+}
+#main-navigation .menu li + li {
+  margin-left: 20px;
+}
+#main-navigation .menu li {
+  position: relative;
+  margin-bottom: 0;
+}
+#main-navigation .menu a {
+  padding: 10px;
+  color: inherit;
+  line-height: 1;
+  font-size: 24px;
+  font-weight: 700;
+  transition: color 0.2s linear;
+}
+#main-navigation .menu a:hover {
+  color: orange;
+}
+#main-navigation .menu ul {
+  display: none;
+  position: absolute;
+  min-width: 203px;
+  background: #fff;
+  padding: 5px;
+  border: 5px solid rgba(64, 64, 65, 0.4);
+  border-radius: 6px;
+  z-index: 1;
+}
+#main-navigation .menu ul li {
+  margin-left: 0;
+}
+#main-navigation .menu ul a {
+  font-weight: 500;
+  display: block;
+}
+#main-navigation a {
+  text-decoration: none;
+  display: inline-block;
+}
+#main-navigation .contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+#main-navigation .contact li:not(:last-child) {
+  margin-bottom: 10px;
+}
+#main-navigation .contact a {
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 600;
+}
+#main-navigation .contact svg {
+  height: 30px;
+  width: 30px;
+}
+#main-navigation .contact svg path {
+  fill: green;
+}
+#main-navigation .contact .btn-primary {
+  font-size: 30px;
+  padding: 10px 20px;
+  min-width: 123px;
+  font-weight: 400;
+}
+
+.open-menu-btn {
+  display: none;
+}
+.open-menu-btn span {
+  display: block;
+  height: 3px;
+  width: 30px;
+  background-color: #000;
+  border-radius: 3px;
+}
+.open-menu-btn span:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+@media (min-width: 992px) {
+  #main-navigation .menu li:hover > ul {
+    display: block;
+  }
+}
+@media (max-width: 1400px) {
+  #main-navigation .menu a,
+#main-navigation .contact a {
+    font-size: 20px;
+  }
+  #main-navigation .contact .btn {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1200px) {
+  #main-navigation .menu a,
+#main-navigation .contact a {
+    font-size: 16px;
+  }
+  #main-navigation .contact .btn {
+    font-size: 18px;
+  }
+}
+@media (max-width: 992px) {
+  .open-menu-btn {
+    display: block;
+  }
+
+  #main-navigation {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    background: #fff;
+    min-height: calc(100vh - 100%);
+    padding-top: 80px;
+  }
+  #main-navigation .menu {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  #main-navigation .menu li {
+    text-align: center;
+    margin: 0;
+  }
+  #main-navigation .menu .has-child .fa-arrow {
+    position: absolute;
+    top: 2px;
+    right: 20px;
+    transform: rotate(315deg);
+    transition: all 0.2s linear;
+    cursor: pointer;
+    display: block;
+    line-height: 1;
+    padding: 4px 7px;
+  }
+  #main-navigation .menu .has-child .fa-arrow::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    display: inline-block;
+  }
+  #main-navigation .menu .has-child.active > ul {
+    display: block;
+  }
+  #main-navigation .menu .has-child.active > .fa-arrow {
+    transform: rotate(135deg);
+  }
+  #main-navigation .contact {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #main-navigation .menu ul {
+    position: static;
+    width: fit-content;
+    margin: auto;
+  }
+
+  .menu-open #main-navigation {
+    display: block;
+  }
+}
+@media (max-width: 992px) {
+  #header {
+    padding: 10px 12px;
+    border-radius: 0;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
